@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="shell">
+        <div class="brand">
+          <a href="/">{{ site.title }}</a>
+          <span class="tagline" data-lang="de">Programmieren fuer Kinder mit micro:bit</span>
+          <span class="tagline" data-lang="en">Coding for kids with micro:bit</span>
+        </div>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/" class="nav-link" data-lang="de">Start</a>
+          <a href="/" class="nav-link" data-lang="en">Home</a>
+          <a href="/courses/" class="nav-link" data-lang="de">Kurse</a>
+          <a href="/courses/" class="nav-link" data-lang="en">Courses</a>
+          <a href="/projects/" class="nav-link" data-lang="de">Projekte</a>
+          <a href="/projects/" class="nav-link" data-lang="en">Projects</a>
+          <a href="/info/" class="nav-link" data-lang="de">Info</a>
+          <a href="/info/" class="nav-link" data-lang="en">Info</a>
+        </nav>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-button" data-lang-switch="de">DE</button>
+          <button type="button" class="lang-button" data-lang-switch="en">EN</button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-grid">
+          <div>
+            <h3 data-lang="de">Kontakt</h3>
+            <h3 data-lang="en">Contact</h3>
+            <p>Prochor Kammerzell</p>
+            <p><a href="mailto:info@roboteria.de">info@roboteria.de</a></p>
+          </div>
+          <div>
+            <h3 data-lang="de">Anmeldung</h3>
+            <h3 data-lang="en">Registration</h3>
+            <p data-lang="de">Alle Kurse laufen ueber die VHS StarnbergAmmersee.</p>
+            <p data-lang="en">All courses are registered via VHS StarnbergAmmersee.</p>
+            <a class="cta" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer">VHS StarnbergAmmersee</a>
+          </div>
+          <div>
+            <h3 data-lang="de">Roboteria</h3>
+            <h3 data-lang="en">Roboteria</h3>
+            <p data-lang="de">Kreativ, altersgerecht und praxisnah.</p>
+            <p data-lang="en">Creative, age-appropriate, hands-on.</p>
+          </div>
+        </div>
+        <p class="legal">Impressum siehe <a href="/info/">Info</a></p>
+      </div>
+    </footer>
+    <script src="/assets/js/lang.js"></script>
+  </body>
+</html>
