@@ -1,0 +1,262 @@
+/* ═══════════════════════════════════════════════════════
+   Grundlayout & Reset
+═══════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --farbe-haupt:    #2563eb;
+  --farbe-sieg-a:   #16a34a;
+  --farbe-sieg-b:   #dc2626;
+  --farbe-remi:     #6b7280;
+  --farbe-bg:       #f1f5f9;
+  --farbe-karte:    #ffffff;
+  --farbe-rand:     #e2e8f0;
+  --farbe-text:     #1e293b;
+  --farbe-text-sw:  #64748b;
+  --radius:         10px;
+  --schatten:       0 2px 12px rgba(0,0,0,.10);
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--farbe-bg);
+  color: var(--farbe-text);
+  min-height: 100vh;
+}
+
+.seite { padding: 1.5rem 1rem; }
+.versteckt { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════
+   Konfigurationsseite
+═══════════════════════════════════════════════════════ */
+.konfiguration-karte {
+  max-width: 640px;
+  margin: 2rem auto;
+  background: var(--farbe-karte);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+  padding: 2rem 2.5rem;
+}
+
+.konfiguration-karte h1 { font-size: 1.8rem; text-align: center; margin-bottom: .25rem; }
+.konfiguration-karte h2 { font-size: 1.2rem; text-align: center; color: var(--farbe-text-sw); margin-bottom: 1rem; }
+
+.hinweis {
+  text-align: center;
+  color: var(--farbe-text-sw);
+  font-size: .9rem;
+  margin-bottom: 1.5rem;
+}
+
+.namen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem 1.2rem;
+  margin-bottom: 1.75rem;
+}
+
+.namen-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--farbe-text-sw);
+  gap: .25rem;
+}
+
+.namen-grid input {
+  padding: .45rem .6rem;
+  border: 1.5px solid var(--farbe-rand);
+  border-radius: 6px;
+  font-size: .95rem;
+  transition: border-color .15s;
+}
+.namen-grid input:focus {
+  outline: none;
+  border-color: var(--farbe-haupt);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Buttons
+═══════════════════════════════════════════════════════ */
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  font-weight: 600;
+  transition: filter .15s, opacity .15s;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:active { filter: brightness(.95); }
+
+.btn-primaer {
+  display: block;
+  width: 100%;
+  padding: .75rem 1.5rem;
+  background: var(--farbe-haupt);
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Ergebnis-Buttons */
+.ergebnis-buttons {
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+
+.btn-sieg-a, .btn-remi, .btn-sieg-b {
+  padding: .3rem .65rem;
+  font-size: .8rem;
+  color: #fff;
+  opacity: .55;
+}
+.btn-sieg-a { background: var(--farbe-sieg-a); }
+.btn-remi   { background: var(--farbe-remi); }
+.btn-sieg-b { background: var(--farbe-sieg-b); }
+
+.btn-sieg-a.aktiv, .btn-remi.aktiv, .btn-sieg-b.aktiv { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════
+   Turnier-Header
+═══════════════════════════════════════════════════════ */
+.turnier-header {
+  max-width: 1100px;
+  margin: 0 auto 1.25rem;
+  text-align: center;
+}
+
+.turnier-header h1 { font-size: 1.6rem; margin-bottom: .4rem; }
+
+.fortschritt-text {
+  font-size: .9rem;
+  color: var(--farbe-text-sw);
+  margin-bottom: .4rem;
+}
+
+.fortschritt-balken-wrap {
+  background: var(--farbe-rand);
+  border-radius: 99px;
+  height: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.fortschritt-balken {
+  height: 100%;
+  background: var(--farbe-haupt);
+  border-radius: 99px;
+  transition: width .3s;
+  width: 0%;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Turnier-Layout
+═══════════════════════════════════════════════════════ */
+.turnier-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .turnier-layout { grid-template-columns: 1fr; }
+  .namen-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Rangliste
+═══════════════════════════════════════════════════════ */
+.rangliste-sektion {
+  background: var(--farbe-karte);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+  padding: 1.25rem 1rem;
+  position: sticky;
+  top: 1rem;
+}
+
+.rangliste-sektion h2 { font-size: 1rem; margin-bottom: .75rem; }
+
+#rangliste-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+#rangliste-tabelle th {
+  text-align: left;
+  color: var(--farbe-text-sw);
+  font-weight: 600;
+  padding: .25rem .35rem;
+  border-bottom: 1.5px solid var(--farbe-rand);
+}
+
+#rangliste-tabelle td {
+  padding: .35rem .35rem;
+  border-bottom: 1px solid var(--farbe-rand);
+}
+
+#rangliste-tabelle tr:last-child td { border-bottom: none; }
+
+.rang-1 td { font-weight: 700; color: #ca8a04; }
+.rang-2 td { font-weight: 600; }
+.rang-3 td { font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════
+   Match-Liste
+═══════════════════════════════════════════════════════ */
+.match-sektion {
+  background: var(--farbe-karte);
+  border-radius: var(--radius);
+  box-shadow: var(--schatten);
+  padding: 1.25rem 1rem;
+}
+
+.match-sektion h2 { font-size: 1rem; margin-bottom: .75rem; }
+
+.match-zeile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .5rem .25rem;
+  border-bottom: 1px solid var(--farbe-rand);
+  flex-wrap: wrap;
+}
+
+.match-zeile:last-child { border-bottom: none; }
+
+.runden-header {
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--farbe-text-sw);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: .9rem .25rem .3rem;
+  border-bottom: 2px solid var(--farbe-rand);
+  margin-bottom: .15rem;
+}
+
+.match-spieler {
+  font-size: .9rem;
+  flex: 1 1 160px;
+}
+
+.match-spieler .vs {
+  color: var(--farbe-text-sw);
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0 .25rem;
+}
+
+.match-nr {
+  font-size: .75rem;
+  color: var(--farbe-text-sw);
+  min-width: 26px;
+}

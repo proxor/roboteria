@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schere-Stein-Papier Turnier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ KONFIGURATION ═══════════════════════════════ -->
+  <div id="seite-konfiguration" class="seite">
+    <div class="karte konfiguration-karte">
+      <h1>✂️🪨📄 Schere-Stein-Papier</h1>
+      <h2>Turnier-Konfiguration</h2>
+      <p class="hinweis">Gib die Namen der 12 Teilnehmer ein. Jeder Spieler bestreitet <strong>6 Begegnungen</strong> (36 Spiele gesamt).</p>
+
+      <div id="namen-grid" class="namen-grid"></div>
+
+      <button id="btn-starten" class="btn btn-primaer">Turnier starten →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ TURNIER ═════════════════════════════════════ -->
+  <div id="seite-turnier" class="seite versteckt">
+    <header class="turnier-header">
+      <h1>✂️🪨📄 Turnier</h1>
+      <div id="fortschritt-text" class="fortschritt-text"></div>
+      <div id="fortschritt-balken-wrap" class="fortschritt-balken-wrap">
+        <div id="fortschritt-balken" class="fortschritt-balken"></div>
+      </div>
+    </header>
+
+    <div class="turnier-layout">
+      <!-- Rangliste -->
+      <section class="rangliste-sektion">
+        <h2>🏆 Rangliste</h2>
+        <table id="rangliste-tabelle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th title="Siege">S</th>
+              <th title="Gespielte Matches">G</th>
+              <th title="Noch ausstehend">⏳</th>
+            </tr>
+          </thead>
+          <tbody id="rangliste-body"></tbody>
+        </table>
+      </section>
+
+      <!-- Match-Liste -->
+      <section class="match-sektion">
+        <h2>🎮 Spiele</h2>
+        <div id="match-liste"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
