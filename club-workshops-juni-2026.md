@@ -42,7 +42,7 @@ permalink: /courses/club-workshops-juni-2026/
 
     <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
       <a class="cta" href="https://makecode.microbit.org/" target="_blank" rel="noreferrer">Mache dein neues Projekt</a>
-      <a class="cta whatsapp" href="https://wa.me/PHONENUMBER" target="_blank" rel="noreferrer">Support-Chat (WhatsApp)</a>
+      <a class="cta whatsapp" href="https://chat.whatsapp.com/BTdaBq8be6M57kWZkw45qb" target="_blank" rel="noreferrer">Support-Chat (WhatsApp)</a>
     </div>
   </div>
 </section>
