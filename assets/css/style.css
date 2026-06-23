@@ -142,18 +142,19 @@ a {
 }
 
 .brand a {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.01em;
-  color: var(--ink-900);
+  display: flex;
+  align-items: center;
 }
 
-.tagline {
+.site-logo {
+  height: 34px;
+  width: auto;
   display: block;
-  font-size: 0.875rem;
-  font-family: var(--font-body);
-  color: var(--text-secondary);
+}
+
+.footer-logo {
+  height: 28px;
+  opacity: 0.92;
 }
 
 .site-nav {
