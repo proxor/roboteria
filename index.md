@@ -20,8 +20,8 @@ title: Roboteria
       <p data-lang="en">I am Prochor Kammerzell, teaching kids courses at VHS StarnbergAmmersee. In Roboteria, children explore how technology works through creative projects with the BBC micro:bit.</p>
       <a class="cta" href="/courses/" data-lang="de">Zu den Kursen</a>
       <a class="cta" href="/courses/" data-lang="en">See courses</a>
-      <a class="cta secondary" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="de">Anmeldung bei der VHS</a>
-      <a class="cta secondary" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="en">Register at VHS</a>
+      <a class="cta secondary" href="https://www.vhs-starnbergammersee.de/ueber-uns/unsere-kursleitungen/prochor-kammerzell-665-L-4048" target="_blank" rel="noreferrer" data-lang="de">Anmeldung bei der VHS</a>
+      <a class="cta secondary" href="https://www.vhs-starnbergammersee.de/ueber-uns/unsere-kursleitungen/prochor-kammerzell-665-L-4048" target="_blank" rel="noreferrer" data-lang="en">Register at VHS</a>
     </div>
     <div class="hero-image">
       <img src="/stuff/microbit_werbefoto.jpg" alt="micro:bit in action">
