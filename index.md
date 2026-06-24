@@ -95,6 +95,38 @@ title: Roboteria
   </div>
 </section>
 
+{% assign latest_post = site.posts | first %}
+{% if latest_post %}
+<section class="section">
+  <div class="shell">
+    <div class="section-title">
+      <span data-lang="de">Neuigkeiten</span>
+      <span data-lang="en">News</span>
+    </div>
+    <div style="margin-top: 1.5rem;">
+      <article class="card blog-card blog-card--featured">
+        {% if latest_post.image %}
+        <div class="blog-card-image">
+          <img src="{{ latest_post.image }}" alt="{{ latest_post.title }}">
+        </div>
+        {% endif %}
+        <div class="blog-card-body">
+          <p class="post-date">{{ latest_post.date | date: "%d.%m.%Y" }}</p>
+          <h3>{{ latest_post.title }}</h3>
+          <p>{{ latest_post.excerpt }}</p>
+          <a class="cta secondary" href="{{ latest_post.url }}" data-lang="de">Weiterlesen</a>
+          <a class="cta secondary" href="{{ latest_post.url }}" data-lang="en">Read more</a>
+        </div>
+      </article>
+    </div>
+    <div style="margin-top: 1.25rem;">
+      <a class="cta secondary" href="/blog/" data-lang="de">Alle Beiträge</a>
+      <a class="cta secondary" href="/blog/" data-lang="en">All posts</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <section class="section" style="background: var(--paper);">
   <div class="shell">
     <div class="section-title">
