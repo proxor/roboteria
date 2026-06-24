@@ -62,6 +62,10 @@ permalink: /courses/
         </div>
         <p data-lang="de">{{ course.description_de }}</p>
         <p data-lang="en">{{ course.description_en }}</p>
+        {% if course.url %}
+        <a class="cta" href="{{ course.url }}" data-lang="de">Zur Kursseite</a>
+        <a class="cta" href="{{ course.url }}" data-lang="en">Course page</a>
+        {% endif %}
       </article>
       {% endfor %}
     </div>

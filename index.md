@@ -94,3 +94,22 @@ title: Roboteria
     <a class="cta" href="/projects/" data-lang="en">More projects</a>
   </div>
 </section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="shell">
+    <div class="section-title">
+      <span data-lang="de">Roboteria-Merch</span>
+      <span data-lang="en">Roboteria Merch</span>
+    </div>
+    <div class="card-grid" style="margin-top: 1rem;">
+      <article class="card" style="grid-column: 1 / -1;">
+        <h3 data-lang="de">Zeig, dass du dabei warst!</h3>
+        <h3 data-lang="en">Show you were there!</h3>
+        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
+        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
+      </article>
+    </div>
+  </div>
+</section>
