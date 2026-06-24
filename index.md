@@ -29,6 +29,68 @@ title: Roboteria
   </div>
 </section>
 
+{% assign latest_post = site.posts | first %}
+{% if latest_post %}
+<section class="section" style="padding: 1.75rem 0;">
+  <div class="shell">
+    <div class="section-title">
+      <span data-lang="de">Neuigkeiten</span>
+      <span data-lang="en">News</span>
+    </div>
+    <a href="{{ latest_post.url }}" class="news-strip">
+      {% if latest_post.image %}
+      <div class="news-strip-image">
+        <img src="{{ latest_post.image }}" alt="{{ latest_post.title }}">
+      </div>
+      {% endif %}
+      <div class="news-strip-body">
+        <p class="post-date">{{ latest_post.date | date: "%d.%m.%Y" }}</p>
+        <h3>{{ latest_post.title }}</h3>
+        <p>{{ latest_post.excerpt }}</p>
+      </div>
+      <div class="news-strip-arrow">→</div>
+    </a>
+    <a class="cta secondary" href="/blog/" data-lang="de" style="margin-top: 0.75rem;">Alle Beiträge</a>
+    <a class="cta secondary" href="/blog/" data-lang="en" style="margin-top: 0.75rem;">All posts</a>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" style="background: var(--paper);">
+  <div class="shell">
+    <div class="section-title">
+      <span data-lang="de">Geplante Kurse</span>
+      <span data-lang="en">Upcoming courses</span>
+    </div>
+    <div class="card-grid" style="margin-top: 1rem;">
+      {% assign planned = site.data.courses | where: "status", "planned" %}
+      {% for course in planned %}
+      <article class="card">
+        <span class="badge">{{ course.id }}</span>
+        <h3 data-lang="de">{{ course.title_de }}</h3>
+        <h3 data-lang="en">{{ course.title_en }}</h3>
+        <div class="course-meta" data-lang="de">
+          <div>{{ course.date_de }}</div>
+          <div>{{ course.age_de }}</div>
+          <div>{{ course.size_de }}</div>
+        </div>
+        <div class="course-meta" data-lang="en">
+          <div>{{ course.date_en }}</div>
+          <div>{{ course.age_en }}</div>
+          <div>{{ course.size_en }}</div>
+        </div>
+        <p data-lang="de">{{ course.description_de | truncatewords: 30 }}</p>
+        <p data-lang="en">{{ course.description_en | truncatewords: 30 }}</p>
+        <a class="cta" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
+        <a class="cta" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+      </article>
+      {% endfor %}
+    </div>
+    <a class="cta secondary" href="/courses/" data-lang="de" style="margin-top: 1.25rem;">Alle Kurse</a>
+    <a class="cta secondary" href="/courses/" data-lang="en" style="margin-top: 1.25rem;">All courses</a>
+  </div>
+</section>
+
 <section class="section">
   <div class="shell">
     <div class="section-title">
@@ -53,6 +115,25 @@ title: Roboteria
         <h3 data-lang="en">Small groups</h3>
         <p data-lang="de">Maximal 8 Teilnehmer:innen pro Kurs - so bleibt Zeit fuer individuelle Fragen.</p>
         <p data-lang="en">Up to 8 participants so there is time for individual questions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="shell">
+    <div class="section-title">
+      <span data-lang="de">Roboteria-Merch</span>
+      <span data-lang="en">Roboteria Merch</span>
+    </div>
+    <div class="card-grid" style="margin-top: 1rem;">
+      <article class="card" style="grid-column: 1 / -1;">
+        <h3 data-lang="de">Zeig, dass du dabei warst!</h3>
+        <h3 data-lang="en">Show you were there!</h3>
+        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
+        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
       </article>
     </div>
   </div>
@@ -92,56 +173,5 @@ title: Roboteria
     </div>
     <a class="cta" href="/projects/" data-lang="de">Mehr Projekte</a>
     <a class="cta" href="/projects/" data-lang="en">More projects</a>
-  </div>
-</section>
-
-{% assign latest_post = site.posts | first %}
-{% if latest_post %}
-<section class="section">
-  <div class="shell">
-    <div class="section-title">
-      <span data-lang="de">Neuigkeiten</span>
-      <span data-lang="en">News</span>
-    </div>
-    <div style="margin-top: 1.5rem;">
-      <article class="card blog-card blog-card--featured">
-        {% if latest_post.image %}
-        <div class="blog-card-image">
-          <img src="{{ latest_post.image }}" alt="{{ latest_post.title }}">
-        </div>
-        {% endif %}
-        <div class="blog-card-body">
-          <p class="post-date">{{ latest_post.date | date: "%d.%m.%Y" }}</p>
-          <h3>{{ latest_post.title }}</h3>
-          <p>{{ latest_post.excerpt }}</p>
-          <a class="cta secondary" href="{{ latest_post.url }}" data-lang="de">Weiterlesen</a>
-          <a class="cta secondary" href="{{ latest_post.url }}" data-lang="en">Read more</a>
-        </div>
-      </article>
-    </div>
-    <div style="margin-top: 1.25rem;">
-      <a class="cta secondary" href="/blog/" data-lang="de">Alle Beiträge</a>
-      <a class="cta secondary" href="/blog/" data-lang="en">All posts</a>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<section class="section" style="background: var(--paper);">
-  <div class="shell">
-    <div class="section-title">
-      <span data-lang="de">Roboteria-Merch</span>
-      <span data-lang="en">Roboteria Merch</span>
-    </div>
-    <div class="card-grid" style="margin-top: 1rem;">
-      <article class="card" style="grid-column: 1 / -1;">
-        <h3 data-lang="de">Zeig, dass du dabei warst!</h3>
-        <h3 data-lang="en">Show you were there!</h3>
-        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
-        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
-      </article>
-    </div>
   </div>
 </section>
