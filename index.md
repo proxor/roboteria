@@ -24,8 +24,8 @@ title: Roboteria
         <span class="pill" data-lang="de">Hands-on</span>
         <span class="pill" data-lang="en">Hands-on</span>
       </div>
-      <p data-lang="de">Ich bin Prochor Kammerzell und leite Kinderkurse bei der VHS StarnbergAmmersee. In Roboteria entdecken Kinder spielerisch, wie Technologie funktioniert — mit dem BBC micro:bit und kreativen Projekten.</p>
-      <p data-lang="en">I am Prochor Kammerzell, teaching kids courses at VHS StarnbergAmmersee. In Roboteria, children explore how technology works through creative projects with the BBC micro:bit.</p>
+      <p data-lang="de">Roboteria ist der MINT-Kinderklub für 8- bis 14-Jährige in Herrsching am Ammersee. In kleinen Gruppen programmieren, tüfteln und bauen Kinder echte Projekte — und gehen aus jeder Stunde mit einem Erfolgserlebnis.</p>
+      <p data-lang="en">Roboteria is the STEM kids club for ages 8–14 in Herrsching am Ammersee. In small groups, children code, tinker, and build real projects — leaving every session with a sense of achievement.</p>
       <a class="cta" href="/courses/" data-lang="de">Zu den Kursen</a>
       <a class="cta" href="/courses/" data-lang="en">See courses</a>
       <a class="cta secondary" href="https://www.vhs-starnbergammersee.de/ueber-uns/unsere-kursleitungen/prochor-kammerzell-665-L-4048" target="_blank" rel="noreferrer" data-lang="de">Anmeldung bei der VHS</a>
@@ -152,8 +152,8 @@ title: Roboteria
         </span>
         <h3 data-lang="de">Hands-on statt Theorie</h3>
         <h3 data-lang="en">Hands-on, not theory</h3>
-        <p data-lang="de">Anfassbar, praktisch, projektbasiert — nie nur Folien.</p>
-        <p data-lang="en">Tangible, practical, project-based — never just slides.</p>
+        <p data-lang="de">Anfassbar, praktisch, projektbasiert.</p>
+        <p data-lang="en">Tangible, practical, project-based.</p>
       </div>
       <div>
         <span class="dark-icon">
@@ -170,17 +170,17 @@ title: Roboteria
         </span>
         <h3 data-lang="de">Klein &amp; begleitet</h3>
         <h3 data-lang="en">Small &amp; supported</h3>
-        <p data-lang="de">Maximal 8 Kinder pro Kurs — persönliche Betreuung in jeder Stunde.</p>
-        <p data-lang="en">Up to 8 kids per course — personal attention in every session.</p>
+        <p data-lang="de">Kleine Gruppen mit persönlicher Betreuung.</p>
+        <p data-lang="en">Small groups with personal attention.</p>
       </div>
       <div>
         <span class="dark-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </span>
-        <h3 data-lang="de">Echte Projekte</h3>
-        <h3 data-lang="en">Real projects</h3>
-        <p data-lang="de">Von Kompass bis Musikbox — Technik, die man auch zuhause weitermachen kann.</p>
-        <p data-lang="en">From compass to music box — tech you can keep building at home.</p>
+        <h3 data-lang="de">Zugänglich &amp; günstig</h3>
+        <h3 data-lang="en">Accessible &amp; affordable</h3>
+        <p data-lang="de">Technik, die man mit einfachen Mitteln auch zuhause weitermachen kann.</p>
+        <p data-lang="en">Technology you can explore further at home with simple tools.</p>
       </div>
     </div>
   </div>
