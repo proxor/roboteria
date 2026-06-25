@@ -17,15 +17,10 @@ permalink: /shop/
   </div>
 </section>
 
-<div id="myShop" style="font-family: inherit;">Spreadshop wird geladen …</div>
-
-<script>
-  var spread_shop_config = {
-    shopName: 'roboteria',
-    prefix: 'https://roboteria.myspreadshop.de',
-    baseId: 'myShop',
-    locale: 'de_DE',
-    updateMetadata: false,
-  };
-</script>
-<script type="text/javascript" src="https://roboteria.myspreadshop.net/js/shopclient.nocache.js"></script>
+<iframe
+  src="https://roboteria.myspreadshop.de"
+  title="Roboteria Shop"
+  style="width:100%;min-height:900px;border:none;display:block;"
+  loading="lazy"
+  allowfullscreen
+></iframe>
