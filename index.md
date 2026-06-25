@@ -215,8 +215,8 @@ title: Roboteria
       <article class="card" style="grid-column: 1 / -1;">
         <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
         <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
+        <a class="cta" href="/shop/" data-lang="de">Zum Shop</a>
+        <a class="cta" href="/shop/" data-lang="en">Visit the shop</a>
       </article>
     </div>
   </div>
