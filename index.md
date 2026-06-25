@@ -201,6 +201,15 @@ title: Roboteria
         <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
         <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
       </article>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/tshirt-ferien.png" alt="T-Shirt Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/bag-ferien.png" alt="Bag Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/lunchbox-roboteria.png" alt="Lunchbox Roboteria" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
     </div>
   </div>
 </section>
