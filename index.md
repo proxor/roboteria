@@ -137,8 +137,13 @@ title: Roboteria
         </div>
         <div class="card-foot">
           {% if course.registration_url %}
+          {% if course.registration_opens and course.registration_opens != "" %}
+          <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
+          <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Registration from {{ course.registration_opens }}</a>
+          {% else %}
           <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
           <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+          {% endif %}
           {% elsif course.registration_opens and course.registration_opens != "" %}
           <a class="cta disabled" style="margin-top: 0;" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
           <a class="cta disabled" style="margin-top: 0;" data-lang="en">Registration from {{ course.registration_opens }}</a>

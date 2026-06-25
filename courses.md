@@ -45,8 +45,13 @@ permalink: /courses/
         <p data-lang="de">{{ course.description_de }}</p>
         <p data-lang="en">{{ course.description_en }}</p>
         {% if course.registration_url %}
+        {% if course.registration_opens and course.registration_opens != "" %}
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Registration from {{ course.registration_opens }}</a>
+        {% else %}
         <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
         <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+        {% endif %}
         {% elsif course.registration_opens and course.registration_opens != "" %}
         <a class="cta disabled" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
         <a class="cta disabled" data-lang="en">Registration from {{ course.registration_opens }}</a>
@@ -94,8 +99,13 @@ permalink: /courses/
         <p data-lang="de">{{ course.description_de }}</p>
         <p data-lang="en">{{ course.description_en }}</p>
         {% if course.registration_url %}
+        {% if course.registration_opens and course.registration_opens != "" %}
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Registration from {{ course.registration_opens }}</a>
+        {% else %}
         <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
         <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+        {% endif %}
         {% elsif course.registration_opens and course.registration_opens != "" %}
         <a class="cta disabled" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
         <a class="cta disabled" data-lang="en">Registration from {{ course.registration_opens }}</a>
