@@ -44,18 +44,15 @@ permalink: /courses/
         </div>
         <p data-lang="de">{{ course.description_de }}</p>
         <p data-lang="en">{{ course.description_en }}</p>
-        {% if course.status == "registration" %}
-        {% assign reg_url = course.registration_url | default: "https://vhs-starnbergammersee.de" %}
-        <a class="cta" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
-        <a class="cta" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
-        {% else %}
-        {% if course.registration_opens and course.registration_opens != "" %}
+        {% if course.registration_url %}
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+        {% elsif course.registration_opens and course.registration_opens != "" %}
         <a class="cta disabled" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
         <a class="cta disabled" data-lang="en">Registration from {{ course.registration_opens }}</a>
         {% else %}
         <a class="cta disabled" data-lang="de">Anmeldung bald</a>
         <a class="cta disabled" data-lang="en">Registration soon</a>
-        {% endif %}
         {% endif %}
       </article>
       {% endfor %}
@@ -96,18 +93,15 @@ permalink: /courses/
         </div>
         <p data-lang="de">{{ course.description_de }}</p>
         <p data-lang="en">{{ course.description_en }}</p>
-        {% if course.status == "registration" %}
-        {% assign reg_url = course.registration_url | default: "https://vhs-starnbergammersee.de" %}
-        <a class="cta" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
-        <a class="cta" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
-        {% else %}
-        {% if course.registration_opens and course.registration_opens != "" %}
+        {% if course.registration_url %}
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
+        <a class="cta" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+        {% elsif course.registration_opens and course.registration_opens != "" %}
         <a class="cta disabled" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
         <a class="cta disabled" data-lang="en">Registration from {{ course.registration_opens }}</a>
         {% else %}
         <a class="cta disabled" data-lang="de">Anmeldung bald</a>
         <a class="cta disabled" data-lang="en">Registration soon</a>
-        {% endif %}
         {% endif %}
       </article>
       {% endfor %}

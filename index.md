@@ -136,18 +136,15 @@ title: Roboteria
           </span>
         </div>
         <div class="card-foot">
-          {% if course.status == "registration" %}
-          {% assign reg_url = course.registration_url | default: "https://vhs-starnbergammersee.de" %}
-          <a class="cta" style="margin-top: 0;" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
-          <a class="cta" style="margin-top: 0;" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
-          {% else %}
-          {% if course.registration_opens and course.registration_opens != "" %}
+          {% if course.registration_url %}
+          <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
+          <a class="cta" style="margin-top: 0;" href="{{ course.registration_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+          {% elsif course.registration_opens and course.registration_opens != "" %}
           <a class="cta disabled" style="margin-top: 0;" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
           <a class="cta disabled" style="margin-top: 0;" data-lang="en">Registration from {{ course.registration_opens }}</a>
           {% else %}
           <a class="cta disabled" style="margin-top: 0;" data-lang="de">Anmeldung bald</a>
           <a class="cta disabled" style="margin-top: 0;" data-lang="en">Registration soon</a>
-          {% endif %}
           {% endif %}
         </div>
       </article>
