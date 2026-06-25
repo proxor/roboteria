@@ -24,3 +24,8 @@ permalink: /shop/
   loading="lazy"
   allowfullscreen
 ></iframe>
+
+<div class="shell" style="padding-top:1rem;padding-bottom:2rem;text-align:center;">
+  <p data-lang="de">Shop nicht sichtbar? <a href="https://roboteria.myspreadshop.de" target="_blank" rel="noreferrer">Direkt zum Shop öffnen</a></p>
+  <p data-lang="en">Shop not visible? <a href="https://roboteria.myspreadshop.de" target="_blank" rel="noreferrer">Open shop directly</a></p>
+</div>
