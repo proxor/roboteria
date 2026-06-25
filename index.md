@@ -194,13 +194,7 @@ title: Roboteria
       <h2 data-lang="de">Zeig, dass du dabei warst!</h2>
       <h2 data-lang="en">Show you were there!</h2>
     </div>
-    <div class="card-grid">
-      <article class="card" style="grid-column: 1 / -1;">
-        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
-        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
-        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
-      </article>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
       <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
         <img src="/assets/img/tshirt-ferien.png" alt="T-Shirt Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
@@ -210,6 +204,20 @@ title: Roboteria
       <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
         <img src="/assets/img/lunchbox-roboteria.png" alt="Lunchbox Roboteria" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/bit-mug.png" alt="Bit Mug" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/pillow-bits.png" alt="Pillow Bits" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card" style="grid-column: 1 / -1;">
+        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
+        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="de">Zum Shop</a>
+        <a class="cta" href="https://roboteria.myspreadshop.de/" target="_blank" rel="noreferrer" data-lang="en">Visit the shop</a>
+      </article>
     </div>
   </div>
 </section>
