@@ -94,8 +94,8 @@ title: Roboteria
       <a class="cta secondary" href="/courses/" data-lang="en">All courses</a>
     </div>
     <div class="card-grid">
-      {% assign planned = site.data.courses | where: "status", "planned" %}
-      {% for course in planned %}
+      {% assign upcoming = site.data.courses | where_exp: "item", "item.status == 'planned' or item.status == 'registration'" %}
+      {% for course in upcoming %}
       <article class="card" style="display: flex; flex-direction: column; gap: 0.75rem;">
         {% if forloop.first %}
         <span class="card-icon card-icon--blue">
@@ -111,20 +111,71 @@ title: Roboteria
         <h3 data-lang="en">{{ course.title_en }}</h3>
         <p data-lang="de">{{ course.description_de | truncatewords: 28 }}</p>
         <p data-lang="en">{{ course.description_en | truncatewords: 28 }}</p>
-        <div class="card-badges">
-          <span class="badge badge--ink" data-lang="de">{{ course.age_de }}</span>
-          <span class="badge badge--ink" data-lang="en">{{ course.age_en }}</span>
-          <span class="badge badge--green" data-lang="de">{{ course.date_de }}</span>
-          <span class="badge badge--green" data-lang="en">{{ course.date_en }}</span>
+        <div class="course-meta" data-lang="de">
+          <div>{{ course.meta.date_de }}</div>
+          {% if course.meta.location %}<div>{{ course.meta.location }}</div>{% endif %}
+          <div>{{ course.meta.age_de }}</div>
+          <div>{{ course.meta.size_de }}</div>
+        </div>
+        <div class="course-meta" data-lang="en">
+          <div>{{ course.meta.date_en }}</div>
+          {% if course.meta.location %}<div>{{ course.meta.location }}</div>{% endif %}
+          <div>{{ course.meta.age_en }}</div>
+          <div>{{ course.meta.size_en }}</div>
         </div>
         <div class="card-foot">
-          <span data-lang="de">{{ course.size_de }}</span>
-          <span data-lang="en">{{ course.size_en }}</span>
-          <a class="cta" style="margin-top: 0;" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
-          <a class="cta" style="margin-top: 0;" href="https://vhs-starnbergammersee.de" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+          {% if course.status == "registration" %}
+          {% assign reg_url = course.registration_url | default: "https://vhs-starnbergammersee.de" %}
+          <a class="cta" style="margin-top: 0;" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="de">Zur Anmeldung</a>
+          <a class="cta" style="margin-top: 0;" href="{{ reg_url }}" target="_blank" rel="noreferrer" data-lang="en">Register</a>
+          {% else %}
+          {% if course.registration_opens and course.registration_opens != "" %}
+          <a class="cta disabled" style="margin-top: 0;" data-lang="de">Anmeldung ab {{ course.registration_opens }}</a>
+          <a class="cta disabled" style="margin-top: 0;" data-lang="en">Registration from {{ course.registration_opens }}</a>
+          {% else %}
+          <a class="cta disabled" style="margin-top: 0;" data-lang="de">Anmeldung bald</a>
+          <a class="cta disabled" style="margin-top: 0;" data-lang="en">Registration soon</a>
+          {% endif %}
+          {% endif %}
         </div>
       </article>
       {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper);">
+  <div class="shell">
+    <div class="section-heading">
+      <p class="eyebrow" data-lang="de">Roboteria-Merch</p>
+      <p class="eyebrow" data-lang="en">Roboteria Merch</p>
+      <h2 data-lang="de">Zeig, dass du dabei warst!</h2>
+      <h2 data-lang="en">Show you were there!</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/tshirt-ferien.png" alt="T-Shirt Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/bag-ferien.png" alt="Bag Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/lunchbox-roboteria.png" alt="Lunchbox Roboteria" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/bit-mug.png" alt="Bit Mug" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <img src="/assets/img/pillow-bits.png" alt="Pillow Bits" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <div class="card-grid">
+      <article class="card" style="grid-column: 1 / -1;">
+        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
+        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
+        <a class="cta" href="/shop/" data-lang="de">Zum Shop</a>
+        <a class="cta" href="/shop/" data-lang="en">Visit the shop</a>
+      </article>
     </div>
   </div>
 </section>
@@ -182,42 +233,6 @@ title: Roboteria
         <p data-lang="de">Technik, die man mit einfachen Mitteln auch zuhause weitermachen kann.</p>
         <p data-lang="en">Technology you can explore further at home with simple tools.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background: var(--paper);">
-  <div class="shell">
-    <div class="section-heading">
-      <p class="eyebrow" data-lang="de">Roboteria-Merch</p>
-      <p class="eyebrow" data-lang="en">Roboteria Merch</p>
-      <h2 data-lang="de">Zeig, dass du dabei warst!</h2>
-      <h2 data-lang="en">Show you were there!</h2>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
-      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/assets/img/tshirt-ferien.png" alt="T-Shirt Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/assets/img/bag-ferien.png" alt="Bag Ferienprogram­mierung" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/assets/img/lunchbox-roboteria.png" alt="Lunchbox Roboteria" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/assets/img/bit-mug.png" alt="Bit Mug" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div class="card" style="display: flex; align-items: center; justify-content: center; overflow: hidden;">
-        <img src="/assets/img/pillow-bits.png" alt="Pillow Bits" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div class="card-grid">
-      <article class="card" style="grid-column: 1 / -1;">
-        <p data-lang="de">T-Shirts, Hoodies und mehr mit dem Roboteria-Logo &ndash; perfekt als Erinnerung an deinen Kurs oder als Geschenkidee. Alle Artikel werden auf Bestellung gedruckt und direkt nach Hause geliefert.</p>
-        <p data-lang="en">T-shirts, hoodies, and more with the Roboteria logo &ndash; a great keepsake from your course or a gift idea. All items are printed on demand and shipped directly to your door.</p>
-        <a class="cta" href="/shop/" data-lang="de">Zum Shop</a>
-        <a class="cta" href="/shop/" data-lang="en">Visit the shop</a>
-      </article>
     </div>
   </div>
 </section>

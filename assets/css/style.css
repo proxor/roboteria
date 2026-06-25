@@ -355,6 +355,14 @@ a {
   background: var(--blue-50);
 }
 
+.cta.disabled {
+  background: var(--ink-100);
+  color: var(--text-muted);
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+}
+
 .course-meta {
   display: grid;
   gap: 0.4rem;
