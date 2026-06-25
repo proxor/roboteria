@@ -38,6 +38,8 @@
   status: "registration"
   category: "ferienprogramm"
   registration_url: "https://herrsching.feripro.de/"
+  status: "planned"
+  registration_opens: "01.08.2026"
   meta:
     date_de: "Mi., 02.09.2026, 14:00–16:00 Uhr"
     date_en: "Wed, 02 Sep 2026, 14:00–16:00"
@@ -70,7 +72,7 @@
   title_de: "Roboteria: Club-Workshops"
   title_en: "Roboteria: Club Workshops"
   status: "planned"
-  registration_opens: ""
+  registration_opens: "01.08.2026"
   meta:
     date_de: "Geplant im November 2026, 6 x 90 Min."
     date_en: "Planned for Nov 2026, 6 x 90 min."
@@ -85,7 +87,7 @@
   title_de: "Roboteria: Anfaengerkurs – Dein Start in die Tech-Welt"
   title_en: "Roboteria: Beginner Course - Your Start in Tech"
   status: "planned"
-  registration_opens: ""
+  registration_opens: "01.08.2026"
   meta:
     date_de: "Geplant im September 2026, 6 x 90 Min."
     date_en: "Planned for Sep 2026, 6 x 90 min."

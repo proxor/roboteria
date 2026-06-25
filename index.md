@@ -111,17 +111,29 @@ title: Roboteria
         <h3 data-lang="en">{{ course.title_en }}</h3>
         <p data-lang="de">{{ course.description_de | truncatewords: 28 }}</p>
         <p data-lang="en">{{ course.description_en | truncatewords: 28 }}</p>
-        <div class="course-meta" data-lang="de">
-          <div>{{ course.meta.date_de }}</div>
-          {% if course.meta.location %}<div>{{ course.meta.location }}</div>{% endif %}
-          <div>{{ course.meta.age_de }}</div>
-          <div>{{ course.meta.size_de }}</div>
+        <div class="course-meta-badges" data-lang="de">
+          <span class="badge badge--ink">{{ course.meta.date_de }}</span>
+          <span class="badge badge--ink">{{ course.meta.age_de }}</span>
         </div>
-        <div class="course-meta" data-lang="en">
-          <div>{{ course.meta.date_en }}</div>
-          {% if course.meta.location %}<div>{{ course.meta.location }}</div>{% endif %}
-          <div>{{ course.meta.age_en }}</div>
-          <div>{{ course.meta.size_en }}</div>
+        <div class="course-meta-badges" data-lang="en">
+          <span class="badge badge--ink">{{ course.meta.date_en }}</span>
+          <span class="badge badge--ink">{{ course.meta.age_en }}</span>
+        </div>
+        <div class="course-meta-footer">
+          {% if course.meta.location %}
+          <span class="course-meta-row">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {{ course.meta.location }}
+          </span>
+          {% endif %}
+          <span class="course-meta-row" data-lang="de">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            {{ course.meta.size_de }}
+          </span>
+          <span class="course-meta-row" data-lang="en">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            {{ course.meta.size_en }}
+          </span>
         </div>
         <div class="card-foot">
           {% if course.status == "registration" %}
