@@ -7,15 +7,7 @@
     <meta name="description" content="{{ site.description }}">
     <link rel="icon" href="/assets/img/roboteria_symbol_farbe.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JX6H2Y4NQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-1JX6H2Y4NQ');
-    </script>
+    <script src="/assets/js/consent.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -91,5 +83,19 @@
       </div>
     </footer>
     <script src="/assets/js/lang.js"></script>
+    <div id="consent-banner" class="consent-banner" style="display: none;">
+      <div class="consent-content">
+        <div class="consent-message">
+          <p data-lang="de">Diese Website nutzt Google Analytics zur Analyse von Besucherzahlen. Ihre Daten werden anonym verarbeitet.</p>
+          <p data-lang="en">This website uses Google Analytics to analyze visitor traffic. Your data is processed anonymously.</p>
+        </div>
+        <div class="consent-actions">
+          <button class="consent-btn consent-btn--secondary consent-reject" data-lang="de">Ablehnen</button>
+          <button class="consent-btn consent-btn--secondary consent-reject" data-lang="en">Reject</button>
+          <button class="consent-btn consent-btn--primary consent-accept" data-lang="de">Akzeptieren</button>
+          <button class="consent-btn consent-btn--primary consent-accept" data-lang="en">Accept</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
