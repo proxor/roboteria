@@ -94,7 +94,9 @@ title: Roboteria
       <a class="cta secondary" href="/courses/" data-lang="en">All courses</a>
     </div>
     <div class="card-grid">
-      {% assign upcoming = site.data.courses | where_exp: "item", "item.status == 'planned' or item.status == 'registration'" %}
+      {% assign upcoming_planned = site.data.courses | where: "status", "planned" %}
+      {% assign upcoming_reg = site.data.courses | where: "status", "registration" %}
+      {% assign upcoming = upcoming_planned | concat: upcoming_reg %}
       {% for course in upcoming %}
       <article class="card" style="display: flex; flex-direction: column; gap: 0.75rem;">
         {% if forloop.first %}
