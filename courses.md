@@ -13,9 +13,7 @@ permalink: /courses/
     <p data-lang="de"><strong>Anmeldung startet am 12. Juli 2026 um 10:00 Uhr</strong> beim <a href="https://herrsching.feripro.de/" target="_blank" rel="noreferrer">Ferienprogramm Herrsching am Ammersee</a> – nicht verpassen!</p>
     <p data-lang="en"><strong>Registration opens on 12 July 2026 at 10:00</strong> via the <a href="https://herrsching.feripro.de/" target="_blank" rel="noreferrer">Ferienprogramm Herrsching am Ammersee</a> – don't miss it!</p>
     <div class="card-grid">
-      {% assign ferienprogramm_planned = site.data.courses | where: "category", "ferienprogramm" | where: "status", "planned" %}
-      {% assign ferienprogramm_reg = site.data.courses | where: "category", "ferienprogramm" | where: "status", "registration" %}
-      {% assign ferienprogramm = ferienprogramm_planned | concat: ferienprogramm_reg %}
+      {% assign ferienprogramm = site.data.courses | where: "category", "ferienprogramm" | where_exp: "item", "item.status != 'past'" %}
       {% for course in ferienprogramm %}
       <article class="card">
         <h3 data-lang="de">{{ course.title_de }}</h3>
@@ -74,10 +72,7 @@ permalink: /courses/
       <span data-lang="en">Planned courses</span>
     </div>
     <div class="card-grid">
-      {% assign planned_planned = site.data.courses | where: "status", "planned" %}
-      {% assign planned_reg = site.data.courses | where: "status", "registration" %}
-      {% assign planned_temp = planned_planned | concat: planned_reg %}
-      {% assign planned = planned_temp | where_exp: "item", "item.category != 'ferienprogramm'" %}
+      {% assign planned = site.data.courses | where_exp: "item", "item.status != 'past'" | where_exp: "item", "item.category != 'ferienprogramm'" %}
       {% for course in planned %}
       <article class="card">
         <span class="badge">{{ course.id }}</span>
